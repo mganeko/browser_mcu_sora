@@ -1,29 +1,35 @@
-# Browser_MCU
+# Browser MCU Sora 
 
-* Browser_MCU is MCU library using a browser for video/audio processing
-* Browser_MCU is designed for MediaStreams from WebRTC
-* Signaling and handling of PeerConnection are not a part of Browser_MCU
-* Browser_MCU はブラウザの映像/音声処理を活用した、MCUライブラリです
-* Browser_MCU は WebRTC でやり取りする MediaStream を扱うために作成されています
-* シグナリングや PeerConnection の処理は、Browser_MCUには含まれていません
+* Video/Audio mixing sample for [WebRTC SFU Sora](https://sora.shiguredo.jp/), using [Browser MCU Core](https://github.com/mganeko/browser_mcu_core) library
+* Using [sora-js-sdk](https://github.com/shiguredo/sora-js-sdk)
+* --
+* [Browser MCU Core](https://github.com/mganeko/browser_mcu_core) ライブラリを利用した、[WebRTC SFU Sora](https://sora.shiguredo.jp/)向けの映像/音声合成サンプルです
+* [sora-js-sdk](https://github.com/shiguredo/sora-js-sdk) をコピーして利用しています
 
 ## Confirmed Environment / 動作確認環境
 
 * Chrome  58.0.3029.110 (64-bit) for MacOS X
-* Firefox (not yet)
+* Firefox 54.04 (64-bit) for MacOS X
 
+## Preparation / 準備
 
-## Samples / サンプル
-
-### Sample for WebRTC SFU Sora
-
-* [WebRTC SFU Sora](https://sora.shiguredo.jp/) sample / サンプル
-  * view source on GitHub / ソースを見る
-  * try GitHub pages / GitHub pages で試す
 * NOTE: You need Sora server to try /  試すにはSoraサーバーが必要です
-* Using [sora-js-sdk](https://github.com/shiguredo/sora-js-sdk)  / [sora-js-sdk](https://github.com/shiguredo/sora-js-sdk) をコピーして利用しています
 
-#### How to use Sora sample / サンプル操作手順
+#### Install / インストール
+
+```
+git clone --recursive https://github.com/mganeko/browser_mcu_sora.git
+```
+
+setup in your own web server / Webサーバー上に配置してください
+
+#### Try on GitHub pages / GitHub pages で試す
+
+* try GitHub pages / GitHub pages で試す
+  * https://mganeko.github.io/browser_mcu_sora/mcu.html
+
+
+## How to Use / 使い方
 
 * Prepare
   * Setup Sora server before using the sample
@@ -49,33 +55,19 @@
 * 映像/音声が合成されます
 * [Mix Channel ID:]を指定して[Connect Mix]ボタンを押すと、合成した映像/音声を指定したチャネルIDに配信することができます
 
-## Usage / 利用方法
+#### NOTE / 注意
 
-#### Prep
+* mixed video will not be updated when window/tab is hidden
+  * In headless browser, this is not a restriction
+* mixのウィンドウ/タブが完全に隠れていると、合成した映像が更新されません
+  * ヘッドレスブラウザの場合は、画面が見えなくても問題ありません
 
-* Load browser_mcu.js in HTML
-
-```
-<script src="js/browser_mcu.js"></script>
-```
-
-#### Initialization / 初期化
-
-#### Start Mix Video/Audio / 合成の開始
- 
-#### Stop  Mix Video/Audio / 合成の停止
-
-
-### Code Samples / コード例
-
-```
-```
 
 ## License / ライセンス
 
-* Browser_MCU is under the MIT license
+* Browser MCU Sora is under the MIT license
 * Using [sora.js](https://github.com/shiguredo/sora-js-sdk) under Apache License 2.0 
-* Browser_MCUはMITランセンスで提供されます
+* Browser MCU Sora はMITランセンスで提供されます
 * [sora.js](https://github.com/shiguredo/sora-js-sdk) は Apache License 2.0 で提供されているものを利用しています
 
 
